@@ -20,8 +20,10 @@ function newEmployee() {
     <td>${ID}</td>
     <td>${title}</td>
     <td>${annualSalary}</td>
-    <td id = "delete">
+    <td> <button id = "delete">Delete</button></td>
     </tr>`);
+
+    $('.info').val('');
     console.log(firstName);
     console.log(lastName);
     console.log(ID);
