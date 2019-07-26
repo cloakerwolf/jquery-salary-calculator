@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="client.js"></script>
+    <title>Salary Calculator</title>
+</head>
+<body class="container">
+    <header>
+        <div class="jumbotron">
+            <h1>Salary Calculator</h1>
+        </div>
+    </header>
+    <main>
+            <h3>Add Employee</h3>
+        <ul> 
+            <!-- inputs -->
+            <input type="text" placeholder="First Name" id="firstNameInput">
+            <input type="text" placeholder="Last Name" id="lastNameInput">
+            <input type="number" placeholder="ID" id="idInput">
+            <input type="text" placeholder="Title" id="titleInput">
+            <input type="number" placeholder="Annual Salary" id="annualSalaryInput">
+           
+            <!-- button -->
+            <button id="dataCollection">Submit</button>
+        </ul>
+            <h3>Employees</h3>
+    </main>
+    <section>
+        <!-- table -->
+        <table class= "table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
