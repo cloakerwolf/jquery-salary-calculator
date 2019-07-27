@@ -7,13 +7,13 @@ let totalMonthlyCost= 0;
 
 function newEmployee() {
     //console.log('newEmployee');
-    let firstName = $('#firstNameInput').val();
-    let lastName = $('#lastNameInput').val();
-    let ID = $('#idInput').val();
-    let title = $('#titleInput').val();
-    let annualSalary = $('#annualSalaryInput').val();
-    let monthlyCost = annualSalary/12;
-    totalMonthlyCost += monthlyCost;
+    let firstName = $('#firstNameInput').val();  //takes the firstname input
+    let lastName = $('#lastNameInput').val();    //takes the lastname input
+    let ID = $('#idInput').val();                 //takes the id input
+    let title = $('#titleInput').val();           //takes the title input
+    let annualSalary = $('#annualSalaryInput').val();  // takes the annualSalary input
+    let monthlyCost = annualSalary/12;             //creates monthlyCost
+    totalMonthlyCost += monthlyCost;     // adds monthly cost to the global totalMonthlyCost
     // make this one show on dom
     $('.employee').append(`<tr>
     <td>${firstName}</td>
@@ -23,7 +23,7 @@ function newEmployee() {
     <td>${annualSalary}</td>
     <td> <button id = "delete">Delete</button></td>
     </tr>`);
-    $('.totalMonthly').text(totalMonthlyCost);
+    $('.totalMonthly').text(totalMonthlyCost);  //prints totalMonthlyCost in Dom in span inside footer
 
     $('.info').val(''); //clears the inputs
     // console.log(firstName);
