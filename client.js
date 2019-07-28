@@ -21,9 +21,13 @@ function newEmployee() {
     <td>${ID}</td>
     <td>${title}</td>
     <td>${annualSalary}</td>
-    <td> <button id = "delete">Delete</button></td>
+    <td> <button id ="delete">Delete</button></td>
     </tr>`);
     $('.totalMonthly').text(totalMonthlyCost);  //prints totalMonthlyCost in Dom in span inside footer
+    if (totalMonthlyCost > 20000) {
+       // console.log('not enought money!');   tested to make sure it worked
+        $('.totalMonthly').css('background-color', 'red') // target location of totalMonthlyCost and turned the background red when the total is more than 20000
+    }
 
     $('.info').val(''); //clears the inputs
     // console.log(firstName);
@@ -33,13 +37,10 @@ function newEmployee() {
     // console.log(annualSalary);
 }
 
-function monthlyCost() {
-    // take in annualSalary 
+function deleteEmployee() {
+    console.log('delete');
     
-    
-    // divide annualSalary by 12 to get monthly salary
-
-    // add all monthly salary and print on Dom
+     $(this).parent().parent().remove();
 }
 
 
@@ -53,4 +54,5 @@ function monthlyCost() {
 function readyNow() {
     console.log('Dom');
     $('#dataCollection').on('click', newEmployee);
+    $('.employee').on('click','#delete', deleteEmployee);
 }
