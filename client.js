@@ -21,8 +21,8 @@ function newEmployee() {
     <td>${lastName}</td>
     <td>${ID}</td>
     <td>${title}</td>
-    <td id= "money">${annualSalary}</td>
-    <td> <button id ="delete">Delete</button></td>
+    <td class= "money">${annualSalary}</td>
+    <td> <button class ="delete">Delete</button></td>
     </tr>`);
     $('.totalMonthly').text(totalMonthlyCost);  //prints totalMonthlyCost in Dom in span inside footer
     if (totalMonthlyCost > 20000) {
@@ -41,7 +41,7 @@ function newEmployee() {
 function deleteEmployee() {
     //console.log('delete');
     // find the monthly cost of the line about to be deleted
-     let remove= $(this).parent().siblings('#money').text();
+     let remove= $(this).parent().siblings('.money').text();
      
      remove= parseFloat(remove/12).toFixed(2); // 
     
@@ -59,5 +59,5 @@ function deleteEmployee() {
 function readyNow() {
    // console.log('Dom');
     $('#dataCollection').on('click', newEmployee); //dataCollection is the submit button when clicked run newEmployee function
-    $('.employee').on('click','#delete', deleteEmployee); //when i click on a delete button for a specific employee it runs the deleteEmployee function
+    $('.employee').on('click','.delete', deleteEmployee); //when i click on a delete button for a specific employee it runs the deleteEmployee function
 }
