@@ -43,10 +43,13 @@ function deleteEmployee() {
     // find the monthly cost of the line about to be deleted
      let remove= $(this).parent().siblings('#money').text();
      
-     remove= parseFloat(remove/12).toFixed(2);
+     remove= parseFloat(remove/12).toFixed(2); // 
     
      totalMonthlyCost -= remove;
     //console.log(remove);
+    if (totalMonthlyCost <= 20000) {
+        $('.totalMonthly').css('background-color', 'white')
+    }
     $('.totalMonthly').text(totalMonthlyCost); 
      $(this).parent().parent().remove(); //targets and removes the parent of the parent of the delete that i click if i just do $(this).remove and click the button it would only delete the button
 }
