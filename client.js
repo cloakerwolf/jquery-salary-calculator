@@ -14,13 +14,14 @@ function newEmployee() {
     let annualSalary = $('#annualSalaryInput').val();  // takes the annualSalary input
     let monthlyCost = annualSalary/12;             //creates monthlyCost
     totalMonthlyCost += Math.round(100 * monthlyCost) / 100;     // adds monthly cost to the global totalMonthlyCost
+    totalMonthlyCost = parseFloat(totalMonthlyCost);
     // make this one show on dom
     $('.employee').append(`<tr>
     <td>${firstName}</td>
     <td>${lastName}</td>
     <td>${ID}</td>
     <td>${title}</td>
-    <td>${annualSalary}</td>
+    <td id= "money">${annualSalary}</td>
     <td> <button id ="delete">Delete</button></td>
     </tr>`);
     $('.totalMonthly').text(totalMonthlyCost);  //prints totalMonthlyCost in Dom in span inside footer
@@ -40,7 +41,13 @@ function newEmployee() {
 function deleteEmployee() {
     //console.log('delete');
     // find the monthly cost of the line about to be deleted
+     let remove= $(this).parent().siblings('#money').text();
+     
+     remove= parseFloat(remove/12).toFixed(2);
     
+     totalMonthlyCost -= remove;
+    //console.log(remove);
+    $('.totalMonthly').text(totalMonthlyCost); 
      $(this).parent().parent().remove(); //targets and removes the parent of the parent of the delete that i click if i just do $(this).remove and click the button it would only delete the button
 }
 
