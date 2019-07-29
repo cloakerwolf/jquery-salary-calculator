@@ -45,7 +45,7 @@ function deleteEmployee() {
      
      remove= parseFloat(remove/12).toFixed(2); // 
     
-     totalMonthlyCost -= remove;
+     totalMonthlyCost -= parseFloat(remove);
     //console.log(remove);
     if (totalMonthlyCost <= 20000) {
         $('.totalMonthly').css('background-color', 'white')
